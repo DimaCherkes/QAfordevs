@@ -71,7 +71,7 @@ public class DeveloperRepositoryTests {
 
     @Test
     @DisplayName("Test developer not found functionality")
-    public void givenDeveloperIsNotCreated_whenGetIt_thenOptionIsEmpty() {
+    public void givenDeveloperIsNotCreated_whenGetById_thenOptionIsEmpty() {
         // given
 
         // when
