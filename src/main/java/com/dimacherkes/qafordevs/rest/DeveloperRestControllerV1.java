@@ -90,9 +90,9 @@ public class DeveloperRestControllerV1 {
     public ResponseEntity<?> deleteDeveloperById(@PathVariable("id") int id, @RequestParam(value = "isHard", defaultValue = "false") boolean isHard) {
         try {
             if (isHard) {
-                developerService.hardDelete(id);
+                developerService.hardDeleteById(id);
             } else {
-                developerService.softDelete(id);
+                developerService.softDeleteById(id);
             }
             return ResponseEntity.ok().build();
         } catch (DeveloperNotFoundException e) {

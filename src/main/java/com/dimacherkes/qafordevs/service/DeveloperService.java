@@ -18,8 +18,8 @@ public interface DeveloperService {
 
     List<DeveloperEntity> getAllActiveBySpecialty(String specialty);
 
-    void softDelete(Integer id);
+    void softDeleteById(Integer id);
 
-    void hardDelete(Integer id);
+    void hardDeleteById(Integer id);
 
 }

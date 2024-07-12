@@ -88,7 +88,6 @@ public class DeveloperServiceImplTests {
 
         // then
         verify(developerRepository, never()).save(any(DeveloperEntity.class));
-
     }
 
     @Test
@@ -184,7 +183,7 @@ public class DeveloperServiceImplTests {
         BDDMockito.given(developerRepository.findById(anyInt()))
                 .willReturn(Optional.of(DataUtils.getJohnDoePersisted()));
         // when
-        serviceUnderTest.softDelete(1);
+        serviceUnderTest.softDeleteById(1);
         // then
         verify(developerRepository, times(1)).save(any(DeveloperEntity.class));
         verify(developerRepository, never()).deleteById(anyInt());
@@ -197,7 +196,7 @@ public class DeveloperServiceImplTests {
         BDDMockito.given(developerRepository.findById(anyInt()))
                 .willReturn(Optional.empty());
         // when
-        assertThrows(DeveloperNotFoundException.class, () -> serviceUnderTest.softDelete(1));
+        assertThrows(DeveloperNotFoundException.class, () -> serviceUnderTest.softDeleteById(1));
         // then
         verify(developerRepository, never()).save(any(DeveloperEntity.class));
     }
@@ -209,7 +208,7 @@ public class DeveloperServiceImplTests {
         BDDMockito.given(developerRepository.findById(anyInt()))
                 .willReturn(Optional.of(DataUtils.getJohnDoePersisted()));
         // when
-        serviceUnderTest.hardDelete(1);
+        serviceUnderTest.hardDeleteById(1);
         // then
         verify(developerRepository, times(1)).deleteById(anyInt());
         verify(developerRepository, never()).save(any(DeveloperEntity.class));
@@ -222,10 +221,9 @@ public class DeveloperServiceImplTests {
         BDDMockito.given(developerRepository.findById(anyInt()))
                 .willReturn(Optional.empty());
         // when
-        assertThrows(DeveloperNotFoundException.class, () -> serviceUnderTest.hardDelete(1));
+        assertThrows(DeveloperNotFoundException.class, () -> serviceUnderTest.hardDeleteById(1));
         // then
         verify(developerRepository, never()).deleteById(anyInt());
     }
-
 
 }

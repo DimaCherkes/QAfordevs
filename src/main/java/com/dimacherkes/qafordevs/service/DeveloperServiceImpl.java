@@ -68,7 +68,7 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
-    public void softDelete(Integer id) {
+    public void softDeleteById(Integer id) {
         DeveloperEntity obtainedDeveloper = developerRepository.findById(id)
                 .orElseThrow(() -> new DeveloperNotFoundException("Developer not found"));
         obtainedDeveloper.setStatus(Status.DELETED);
@@ -76,7 +76,7 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
-    public void hardDelete(Integer id) {
+    public void hardDeleteById(Integer id) {
         DeveloperEntity obtainedDeveloper = developerRepository.findById(id)
                 .orElseThrow(() -> new DeveloperNotFoundException("Developer not found"));
         developerRepository.deleteById(obtainedDeveloper.getId());
