@@ -28,6 +28,7 @@ public class DeveloperDto {
                 .firstName(firstName)
                 .lastName(lastName)
                 .specialty(specialty)
+                .email(email)
                 .status(status)
                 .build();
     }
@@ -38,6 +39,7 @@ public class DeveloperDto {
                 .firstName(developer.getFirstName())
                 .lastName(developer.getLastName())
                 .specialty(developer.getSpecialty())
+                .email(developer.getEmail())
                 .status(developer.getStatus())
                 .build();
     }

@@ -8,7 +8,7 @@ public class DataUtils {
 
     public static DeveloperEntity getJohnDoeTransient() {
         return DeveloperEntity.builder()
-                .firstName("Jonh")
+                .firstName("John")
                 .lastName("Doe")
                 .email("jonh.doe@gmail.com")
                 .specialty("Java")
@@ -71,7 +71,7 @@ public class DataUtils {
 
     public static DeveloperDto getJohnDoeDtoTransient() {
         return DeveloperDto.builder()
-                .firstName("Jonh")
+                .firstName("John")
                 .lastName("Doe")
                 .email("jonh.doe@gmail.com")
                 .specialty("Java")
@@ -102,7 +102,7 @@ public class DataUtils {
     public static DeveloperDto getJohnDoeDtoPersisted() {
         return DeveloperDto.builder()
                 .id(1)
-                .firstName("Jonh")
+                .firstName("John")
                 .lastName("Doe")
                 .email("jonh.doe@gmail.com")
                 .specialty("Java")
